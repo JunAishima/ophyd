@@ -313,16 +313,16 @@ class EigerDetectorCam(CamBase, FileBase):
          'wavelength', 'det_distance', 'threshold_energy', 'photon_energy', 'manual_trigger',
          'special_trigger_button'))
 
-    shutter_mode = ADCpt(SignalWithRBV, 'ShutterMode')
-    num_triggers = ADCpt(SignalWithRBV, 'NumTriggers')
-    beam_center_x = ADCpt(SignalWithRBV, 'BeamX')
-    beam_center_y = ADCpt(SignalWithRBV, 'BeamY')
-    wavelength = ADCpt(SignalWithRBV, 'Wavelength')
-    det_distance = ADCpt(SignalWithRBV, 'DetDist')
-    threshold_energy = ADCpt(SignalWithRBV, 'ThresholdEnergy')
-    photon_energy = ADCpt(SignalWithRBV, 'PhotonEnergy')
-    manual_trigger = ADCpt(SignalWithRBV, 'ManualTrigger')  # the checkbox
-    special_trigger_button = ADCpt(EpicsSignal, 'Trigger')  # the button next to 'Start' and 'Stop'
+    shutter_mode = ADCpt(SignalWithRBV, 'ShutterMode', auto_monitor=True)
+    num_triggers = ADCpt(SignalWithRBV, 'NumTriggers', auto_monitor=True)
+    beam_center_x = ADCpt(SignalWithRBV, 'BeamX', auto_monitor=True)
+    beam_center_y = ADCpt(SignalWithRBV, 'BeamY', auto_monitor=True)
+    wavelength = ADCpt(SignalWithRBV, 'Wavelength', auto_monitor=True)
+    det_distance = ADCpt(SignalWithRBV, 'DetDist', auto_monitor=True)
+    threshold_energy = ADCpt(SignalWithRBV, 'ThresholdEnergy', auto_monitor=True)
+    photon_energy = ADCpt(SignalWithRBV, 'PhotonEnergy', auto_monitor=True)
+    manual_trigger = ADCpt(SignalWithRBV, 'ManualTrigger', auto_monitor=True)  # the checkbox
+    special_trigger_button = ADCpt(EpicsSignal, 'Trigger', auto_monitor=True)  # the button next to 'Start' and 'Stop'
     trigger_exposure = ADCpt(SignalWithRBV, 'TriggerExposure')
     data_source = ADCpt(SignalWithRBV, 'DataSource')
     stream_decompress = ADCpt(SignalWithRBV, 'StreamDecompress')
